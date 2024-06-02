@@ -37,13 +37,23 @@ library(readxl)
 ## Cargar datos
 
 `file.choose()` permite seleccionar el archivo de datos.
+`read_excel()` permite leer el archivo de datos seleccionado.
+`read.xlsx()` permite leer el archivo de datos seleccionado.
 ```{r}
 #| label: Cargar datos
 
 #dmigramex <- read.xlsx("DATOS/cuadro3.1.1.xls")
-dmigramex <- read_excel(file.choose())
-
+#dmigramex <- read_excel(file.choose())
+dmigramex <- read_excel("DATOS/cuadro3.1.1.xls")
 #file.choose()
 
+```
+`slice()` permite seleccionar las filas deseadas.
+`which()` permite encontrar la posición de un elemento en un vector.
+
+```{r}
+#| label: Seleccion de filas deseadas
+
+dmigramex <- dmigramex |> slice(3:(which(dmigramex[,1] == "Apátridas") - 2))
 ```
 
