@@ -1,0 +1,49 @@
+---
+title: "Taller visualización de datos"
+author: "CEC"
+format: 
+  pdf:
+    toc: TRUE
+    toc-title: "Tabla de Contenidos"
+    fig-pos: H
+    lof: false
+crossref:
+  lof-title: "Lista de Figuras"
+  fig-title: Figura
+  tbl-title: Tabla    
+knitr:
+  opts_chunk: 
+    fig.path: "figuras_salida_1/"
+execute:
+  echo: true
+  warning: false
+params:
+  rank: "indiferente"
+---
+
+## Librerias
+
+```{r}
+#| label: Librerias
+
+library(tidyverse) 
+library(openxlsx)
+library(readxl)
+
+
+
+```
+
+## Cargar datos
+
+`file.choose()` permite seleccionar el archivo de datos.
+```{r}
+#| label: Cargar datos
+
+#dmigramex <- read.xlsx("DATOS/cuadro3.1.1.xls")
+dmigramex <- read_excel(file.choose())
+
+#file.choose()
+
+```
+
