@@ -57,3 +57,11 @@ dmigramex <- read_excel("DATOS/cuadro3.1.1.xls")
 dmigramex <- dmigramex |> slice(3:(which(dmigramex[,1] == "Apátridas") - 2))
 ```
 
+`select()` permite seleccionar las columnas deseadas.
+```{r}
+#| label: Seleccion de columnas deseadas
+
+dmigramex <- dmigramex |> select(1:(which(dmigramex[1, ] == "Total") - 4))
+```
+
+
